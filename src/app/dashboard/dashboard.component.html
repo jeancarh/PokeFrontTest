@@ -1,0 +1,64 @@
+<div class="sidebar-nav">
+  <nav class="navbar navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Menus List -->
+      <div
+        class="offcanvas offcanvas-start shadow"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li>
+              <a (click)="activatePokemonView()"
+                ><i class="bi bi-calendar3"></i>
+                <span class="item-text">Pokemons</span></a
+              >
+            </li>
+            <li>
+              <a (click)="activateUsersView()"
+                ><i class="bi bi-pencil-square"></i>
+                <span class="item-text">Users</span></a
+              >
+            </li>
+            <li>
+              <a (click)="activateFavsView()"
+                ><i class="bi bi-people"></i>
+                <span class="item-text">My Favorites</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a class="text-white text-decoration-none">
+          <span class="usericon"><i class="bi bi-person-circle"></i></span>
+          <span class="textnone">{{ parsedUser.username }}</span
+          >&nbsp;
+          <input
+            type="submit"
+            class="btn btn-danger"
+            (click)="closeSession()"
+            value="Close Session"
+          />
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="body">
+  <app-pokemon *ngIf="activatePokemon"></app-pokemon>
+  <app-favorites *ngIf="activateFavs"></app-favorites>
+  <app-users *ngIf="activateUsers"></app-users>
+</div>

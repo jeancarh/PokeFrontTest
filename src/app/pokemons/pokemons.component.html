@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h1>Pokemons</h1>
+  <h1></h1>
+  <table id="pokemons" class="styled-table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="
+          let poke of pokemons;
+          let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ poke['name'] }}</td>
+        <td>{{ poke['url'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

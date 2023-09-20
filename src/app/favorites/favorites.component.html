@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Customize Your Pokemons</h1>
+  <div class="row align-items-start mt-5">
+    <div class="col-md-6">
+      <h3>Avaiable Pokemons:</h3>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let pokemon of pokemons">
+          {{ pokemon.name
+          }}&nbsp;&nbsp;&nbsp;&nbsp;<i
+            (click)="addItemToTarget(pokemon)"
+            class="bi bi-plus-circle-fill"
+          ></i>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Favorite Pokemons:</h3>
+      <ul  class="list-group">
+        <li class="list-group-item" *ngFor="let favorite of favs">{{ favorite.name }}</li>
+      </ul>
+      <button (click)="saveData()" type="button" class="btn btn-success">Save</button>
+      <div *ngIf="dataSaved" class="alert alert-success" role="alert">
+        Your New Favorites Has Been Saved
+      </div>
+    </div>
+  </div>
+</div>
